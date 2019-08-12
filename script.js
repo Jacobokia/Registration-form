@@ -1,7 +1,7 @@
 const validate = () => {
     const user = document.getElementById('userId');
     const password = document.getElementById('pass');
-    const name1 = document.getElementById('name').value;
+    const name1 = document.getElementById('name');
     const address = document.getElementById('address');
     const zip= document.getElementById('zip');
     const email = document.getElementById('email');
@@ -28,8 +28,8 @@ else{
      password.style.border = '2px solid red';
      document.getElementById('passwordInvalid').style.visibility = 'visible';
  }
- if (name.value ==''){
-    name.style.border = '2px solid red';
+ if (name1.value ==''){
+    name1.style.border = '2px solid red';
     document.getElementById('invalidName').style.visibility = 'visible';
 };
 if(/[^A-Za-z]/.test(name1)){
