@@ -4,64 +4,130 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="css/css/bootstrap.css">
+    <link rel="stylesheet" href="css/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Form Validation</title>
 </head>
 <body>
-    <div id="reg-form">
+    <div  id="MainDiv" class="container">
             <h1>Registration Form</h1>
             <form action="" >
-                <label for="UserId" class="text-box">User Id:</label>
-                       <input type="text" name="userID" id="userId" class="text-box">
-                       <span id="userIdInvalid" style="color: red ; visibility: hidden" >Required and must be of length 5 to 12.</span><br><br>
-        
-                       <label for="Password" class="text-box">Password:</label>
-                       <input type="password" id="pass" class="text-box">
-                       <span id="passwordInvalid" style="color: red ; visibility:hidden">Required and must be of length 7 to 12.</span><br><br>
-        
-                       <label for="name" >Name:</label>
-                       <input type="text" id="name" class="text-box">
-                       <span id="invalidName" style="color: red ; visibility:hidden;">Required and alphabates only</span>
-                       <span id="alphabet" style="color: red ; visibility: hidden;"; >Password should be alphabets only</span>
-                       <br><br>
-        
-                       <label for="Address" >Address:</label>
-                       <input type="text" id="address" class="text-box">
-                       <span id="addressOptional" style="color: red; visibility:hidden;">Optional</span><br><br>
-        
-                       <label for="country">Country:</label>
-                       <select name="" id="country">
-                           <option value="">Please select the Country</option>
-                           <option value="USA">USA</option>
-                           <option value="Uganda">Uganda</option>
-                           <option value="Kenya">Kenya</option>
-        
-                       </select>
-                       <span id="countrySelect" style="color: red; visibility:hidden;">Required. Must be selected</span><br><br>
-        
-                       <label for="Zip">Zip Code:</label>
-                       <input type="number" id="zip"><br><br>
-        
-                       <label for="email">Email:</label>
-                       <input type="email" class="text-box" id="email"><br><br>
-        
-                       <label for="sex">Sex:</label>
-                       <input type="radio">Male
-                       <input type="radio">Female <br><br>
-        
-                       <label for="language">Language:</label>
-                       <input type="checkbox" name="language">English
-                       <input type="checkbox" name="language" >Non-English <br><br>
-        
-                       <label for="textarea">About:</label><br>
-                       <textarea name="" id="" cols="30" rows="10"></textarea><br><br>
-        
-                       <button type="button" onclick="validate()">Submit</button>
-                      
-               
-            </form>
-    </div>
-    
+
+            <table>
+                <tr>
+                    <td><label for="UserId" class="label">User Id:</label></td>
+                    <td><input type="text" name="userID" id="userId" class="form-control" ><span id="userIdInvalid" style="color: red ; visibility: hidden" >Required and must be of length 5 to 12.</span> </td>
+                </tr>
+
+                <tr>
+                    <td><label for="Password" class="label" class="form-control">Password:</label></td>
+                    <td>
+                            <input type="password" id="pass" class="form-control" style="width: 350px;">
+                            <span id="passwordInvalid" style="color: red ; visibility:hidden">Required and must be of length 7 to 12.</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="name"  class="label">Name:</label>
+                    </td>
+                    <td>
+                            <input type="text" id="name" class="form-control" style="width: 350px;">
+                            <span id="invalidName" style="color: red ; visibility:hidden;">Required and alphabates only</span>
+                            <span id="alphabet" style="color: red ; visibility: hidden;"; >Password should be alphabets only</span>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="Address" class="label" >Address:</label>
+                    </td>
+                    <td>
+                            <input type="text" id="address" class="form-control" style="width: 350px;">
+                            <span id="addressOptional" style="color: red; visibility:hidden;">Optional</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="country" class="label">Country:</label>
+                    </td>
+                    <td>
+                        <select name="" id="country" class="form-control" style="width: 350px">
+                                    <option value="">Please select the Country</option>
+                                    <option value="USA" class="country">USA</option>
+                                    <option value="Uganda" class="country">Uganda</option>
+                                    <option value="Kenya" class="country">Kenya</option>
+                 
+                        </select>
+                        <span id="countrySelect" style="color: red; visibility:hidden;">Required. Must be selected</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="Zip" class="label">Zip Code:</label>
+                    </td>
+                    <td>
+                        <input type="number" id="zip" class="form-control" style="width: 350px;">
+                        <span id="zipNeeded" style="color: red; visibility:hidden;">Required. Must be Numeric only</span>
+                        <span id="numeric" style="color: red; visibility:hidden">Required. Must be Numeric only</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="email" class="label">Email:</label>
+                    </td>
+                    <td>
+                        <input type="email" class="form-control" id="email" style="width: 350px;">
+                        <span id="emailneeded" style="color: red; visibility:hidden">Required. Must be a valid email</span>
+                        <span id="emailinvalid" style="color: red; visibility:hidden">Required. Must be a valid email</span>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="sex" class="label">Sex:</label>
+                    </td>
+                    <td>
+                        <input type="radio" class="sex" id="sexmale" unchecked>Male &nbsp;
+                        <input type="radio" class="sex" id="sexfemale" unchecked>Female
+                        <span id="gender" style="color: red; visibility:hidden">Required</span> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="language" class="label">Language:</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" name="lang" id="english" unchecked >English &nbsp;
+                        <input type="checkbox" name="lang" id="nonenglish" unchecked >Non-English 
+                        <span id="language" style="color: red ; visibility:hidden">Required</span> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="textarea" class="label ">About:</label>
+                    </td>
+                    <td>
+                        <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    
+                    <td><button type="button"  class="btn btn-primary" onclick="validate()">Submit</button></td>
+                </tr>
+            </table>
+                
+
+                
+                
+                
+
+                
+
+
+                
     <script src="script.js"></script>
 </body>
 </html>
